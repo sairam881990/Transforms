@@ -1,0 +1,3 @@
+io/debezium/transforms/MongoDataConverter.class
+io/debezium/transforms/StringToJson.class
+io/debezium/transforms/MongoDataConverter$1.class
