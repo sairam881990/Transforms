@@ -20,7 +20,6 @@ public class StringToJson<R extends ConnectRecord<R>> implements Transformation<
 		SchemaBuilder schemabuilder = SchemaBuilder.struct();
 
 		BsonDocument val = BsonDocument.parse(r.value().toString());
-		System.out.println(val);
 
 		Set<Entry<String, BsonValue>> keyValues = val.entrySet();
 
@@ -36,7 +35,6 @@ public class StringToJson<R extends ConnectRecord<R>> implements Transformation<
 
 			MongoDataConverter.convertRecord(keyvalueforStruct, finalSchema, finalStruct);
 		}
-		System.out.println(finalStruct);
 
 		return r.newRecord(r.topic(), r.kafkaPartition(), r.keySchema(), r.key(), finalSchema, finalStruct,r.timestamp());
 	}
